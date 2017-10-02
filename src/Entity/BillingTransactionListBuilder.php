@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\billing;
+namespace Drupal\billing\Entity;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
@@ -12,7 +12,6 @@ use Drupal\Core\Link;
  * @ingroup billing
  */
 class BillingTransactionListBuilder extends EntityListBuilder {
-
 
   /**
    * {@inheritdoc}

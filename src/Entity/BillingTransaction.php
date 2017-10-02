@@ -19,7 +19,7 @@ use Drupal\user\UserInterface;
  *   label = @Translation("Billing transaction"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\billing\BillingTransactionListBuilder",
+ *     "list_builder" = "Drupal\billing\Entity\BillingTransactionListBuilder",
  *     "views_data" = "Drupal\billing\Entity\BillingTransactionViewsData",
  *
  *     "form" = {
@@ -28,9 +28,9 @@ use Drupal\user\UserInterface;
  *       "edit" = "Drupal\billing\Form\BillingTransactionForm",
  *       "delete" = "Drupal\billing\Form\BillingTransactionDeleteForm",
  *     },
- *     "access" = "Drupal\billing\BillingTransactionAccessControlHandler",
+ *     "access" = "Drupal\billing\Entity\BillingTransactionAccessControlHandler",
  *     "route_provider" = {
- *       "html" = "Drupal\billing\BillingTransactionHtmlRouteProvider",
+ *       "html" = "Drupal\billing\Entity\BillingTransactionHtmlRouteProvider",
  *     },
  *   },
  *   base_table = "billing_transaction",

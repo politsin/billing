@@ -18,11 +18,11 @@ entity.billing_transaction.collection:
   title: 'Billing transaction list'
   route_name: entity.billing_transaction.collection
   description: 'List Billing transaction entities'
-  parent: system.admin_structure
+  parent: entity.user.collection
   weight: 100
 
 billing_transaction.admin.structure.settings:
   title: Billing transaction settings
   description: 'Configure Billing transaction entities'
   route_name: billing_transaction.settings
-  parent: system.admin_structure
+  parent: user.admin_index

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\billing;
+namespace Drupal\billing\Entity;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
