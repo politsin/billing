@@ -1,0 +1,14 @@
+
+# billing amount menu items definition
+entity.billing_amount.collection:
+  title: 'Billing amount list'
+  route_name: entity.billing_amount.collection
+  description: 'List billing amount entities'
+  parent: entity.user.collection
+  weight: 100
+
+billing_amount.admin.structure.settings:
+  title: Billing amount settings
+  description: 'Configure billing amount entities'
+  route_name: billing_amount.settings
+  parent: user.admin_index

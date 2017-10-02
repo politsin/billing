@@ -1,5 +1,5 @@
-name: balance
-description: 'user balance'
+name: Billing
+description: 'user billing'
 type: module
 core: 8.x
 version: 1.0

@@ -1,0 +1,21 @@
+# billing amount routing definition
+billing_amount.settings_tab:
+  route_name: billing_amount.settings
+  title: 'Settings'
+  base_route: billing_amount.settings
+
+entity.billing_amount.canonical:
+  route_name: entity.billing_amount.canonical
+  base_route: entity.billing_amount.canonical
+  title: 'View'
+
+entity.billing_amount.edit_form:
+  route_name: entity.billing_amount.edit_form
+  base_route: entity.billing_amount.canonical
+  title: 'Edit'
+
+entity.billing_amount.delete_form:
+  route_name:  entity.billing_amount.delete_form
+  base_route:  entity.billing_amount.canonical
+  title: Delete
+  weight: 10
