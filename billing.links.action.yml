@@ -1,5 +1,5 @@
-entity.billing_amount.add_form:
-  route_name: entity.billing_amount.add_form
-  title: 'Add billing amount'
+entity.billing_account.add_form:
+  route_name: entity.billing_account.add_form
+  title: 'Add billing account'
   appears_on:
-    - entity.billing_amount.collection
+    - entity.billing_account.collection

@@ -6,11 +6,11 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class BillingAmountSettingsForm.
+ * Class BillingAccountSettingsForm.
  *
  * @ingroup billing
  */
-class BillingAmountSettingsForm extends FormBase {
+class BillingAccountSettingsForm extends FormBase {
 
   /**
    * Returns a unique string identifying the form.
@@ -19,7 +19,7 @@ class BillingAmountSettingsForm extends FormBase {
    *   The unique string identifying the form.
    */
   public function getFormId() {
-    return 'billingamount_settings';
+    return 'billingaccount_settings';
   }
 
   /**
@@ -35,7 +35,7 @@ class BillingAmountSettingsForm extends FormBase {
   }
 
   /**
-   * Defines the settings form for Billing amount entities.
+   * Defines the settings form for Billing account entities.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -46,7 +46,7 @@ class BillingAmountSettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['billingamount_settings']['#markup'] = 'Settings form for Billing amount entities. Manage field settings here.';
+    $form['billingaccount_settings']['#markup'] = 'Settings form for Billing account entities. Manage field settings here.';
     return $form;
   }
 

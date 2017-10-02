@@ -2,26 +2,26 @@
 
 /**
  * @file
- * Contains billing_amount.page.inc.
+ * Contains billing_account.page.inc.
  *
- * Page callback for Billing amount entities.
+ * Page callback for Billing account entities.
  */
 
 use Drupal\Core\Render\Element;
 
 /**
- * Prepares variables for Billing amount templates.
+ * Prepares variables for Billing account templates.
  *
- * Default template: billing_amount.html.twig.
+ * Default template: billing_account.html.twig.
  *
  * @param array $variables
  *   An associative array containing:
  *   - elements: An associative array containing the user information and any
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_billing_amount(array &$variables) {
-  // Fetch BillingAmount Entity Object.
-  $billing_amount = $variables['elements']['#billing_amount'];
+function template_preprocess_billing_account(array &$variables) {
+  // Fetch BillingAccount Entity Object.
+  $billing_account = $variables['elements']['#billing_account'];
 
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {

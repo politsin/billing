@@ -1,22 +1,22 @@
 <?php
 
-namespace Drupal\balance\Form;
+namespace Drupal\billing\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Form controller for Balance amount edit forms.
+ * Form controller for Billing account edit forms.
  *
- * @ingroup balance
+ * @ingroup billing
  */
-class BalanceAmountForm extends ContentEntityForm {
+class BillingAccountForm extends ContentEntityForm {
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var $entity \Drupal\balance\Entity\BalanceAmount */
+    /* @var $entity \Drupal\billing\Entity\BillingAccount */
     $form = parent::buildForm($form, $form_state);
 
     $entity = $this->entity;
@@ -34,17 +34,17 @@ class BalanceAmountForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Balance amount.', [
+        drupal_set_message($this->t('Created the %label Billing account.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Balance amount.', [
+        drupal_set_message($this->t('Saved the %label Billing account.', [
           '%label' => $entity->label(),
         ]));
     }
-    $form_state->setRedirect('entity.balance_amount.canonical', ['balance_amount' => $entity->id()]);
+    $form_state->setRedirect('entity.billing_account.canonical', ['billing_account' => $entity->id()]);
   }
 
 }

@@ -5,9 +5,9 @@ namespace Drupal\billing\Entity;
 use Drupal\views\EntityViewsData;
 
 /**
- * Provides Views data for Billing amount entities.
+ * Provides Views data for Billing account entities.
  */
-class BillingAmountViewsData extends EntityViewsData {
+class BillingAccountViewsData extends EntityViewsData {
 
   /**
    * {@inheritdoc}

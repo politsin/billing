@@ -7,18 +7,18 @@ use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\Core\Link;
 
 /**
- * Defines a class to build a listing of Billing amount entities.
+ * Defines a class to build a listing of Billing account entities.
  *
  * @ingroup billing
  */
-class BillingAmountListBuilder extends EntityListBuilder {
+class BillingAccountListBuilder extends EntityListBuilder {
 
 
   /**
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('Billing amount ID');
+    $header['id'] = $this->t('Billing account ID');
     $header['name'] = $this->t('Name');
     return $header + parent::buildHeader();
   }
@@ -27,12 +27,12 @@ class BillingAmountListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\billing\Entity\BillingAmount */
+    /* @var $entity \Drupal\billing\Entity\BillingAccount */
     $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),
-      'entity.billing_amount.edit_form',
-      ['billing_amount' => $entity->id()]
+      'entity.billing_account.edit_form',
+      ['billing_account' => $entity->id()]
     );
     return $row + parent::buildRow($entity);
   }

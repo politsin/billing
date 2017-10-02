@@ -1,22 +1,22 @@
-add billing amount entities:
-  title: 'Create new billing amount entities'
+add billing account entities:
+  title: 'Create new billing account entities'
 
-administer billing amount entities:
-  title: 'Administer billing amount entities'
-  description: 'Allow to access the administration form to configure billing amount entities.'
+administer billing account entities:
+  title: 'Administer billing account entities'
+  description: 'Allow to access the administration form to configure billing account entities.'
   restrict access: true
 
-delete billing amount entities:
-  title: 'Delete billing amount entities'
+delete billing account entities:
+  title: 'Delete billing account entities'
 
-edit billing amount entities:
-  title: 'Edit billing amount entities'
+edit billing account entities:
+  title: 'Edit billing account entities'
 
-access billing amount overview:
-  title: 'Access the billing amount overview page'
+access billing account overview:
+  title: 'Access the billing account overview page'
 
-view published billing amount entities:
-  title: 'View published billing amount entities'
+view published billing account entities:
+  title: 'View published billing account entities'
 
-view unpublished billing amount entities:
-  title: 'View unpublished billing amount entities'
+view unpublished billing account entities:
+  title: 'View unpublished billing account entities'

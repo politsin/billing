@@ -5,11 +5,11 @@ namespace Drupal\billing\Form;
 use Drupal\Core\Entity\ContentEntityDeleteForm;
 
 /**
- * Provides a form for deleting Billing amount entities.
+ * Provides a form for deleting Billing account entities.
  *
  * @ingroup billing
  */
-class BillingAmountDeleteForm extends ContentEntityDeleteForm {
+class BillingAccountDeleteForm extends ContentEntityDeleteForm {
 
 
 }

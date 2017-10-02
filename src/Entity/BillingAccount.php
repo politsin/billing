@@ -10,31 +10,31 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
 
 /**
- * Defines the Billing amount entity.
+ * Defines the Billing account entity.
  *
  * @ingroup billing
  *
  * @ContentEntityType(
- *   id = "billing_amount",
- *   label = @Translation("Billing amount"),
+ *   id = "billing_account",
+ *   label = @Translation("Billing account"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\billing\Entity\BillingAmountListBuilder",
- *     "views_data" = "Drupal\billing\Entity\BillingAmountViewsData",
+ *     "list_builder" = "Drupal\billing\Entity\BillingAccountListBuilder",
+ *     "views_data" = "Drupal\billing\Entity\BillingAccountViewsData",
  *
  *     "form" = {
- *       "default" = "Drupal\billing\Form\BillingAmountForm",
- *       "add" = "Drupal\billing\Form\BillingAmountForm",
- *       "edit" = "Drupal\billing\Form\BillingAmountForm",
- *       "delete" = "Drupal\billing\Form\BillingAmountDeleteForm",
+ *       "default" = "Drupal\billing\Form\BillingAccountForm",
+ *       "add" = "Drupal\billing\Form\BillingAccountForm",
+ *       "edit" = "Drupal\billing\Form\BillingAccountForm",
+ *       "delete" = "Drupal\billing\Form\BillingAccountDeleteForm",
  *     },
- *     "access" = "Drupal\billing\Entity\BillingAmountAccessControlHandler",
+ *     "access" = "Drupal\billing\Entity\BillingAccountAccessControlHandler",
  *     "route_provider" = {
- *       "html" = "Drupal\billing\Entity\BillingAmountHtmlRouteProvider",
+ *       "html" = "Drupal\billing\Entity\BillingAccountHtmlRouteProvider",
  *     },
  *   },
- *   base_table = "billing_amount",
- *   admin_permission = "administer billing amount entities",
+ *   base_table = "billing_account",
+ *   admin_permission = "administer billing account entities",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",
@@ -44,16 +44,16 @@ use Drupal\user\UserInterface;
  *     "status" = "status",
  *   },
  *   links = {
- *     "canonical" = "/billing/billing_amount/{billing_amount}",
- *     "add-form" = "/billing/billing_amount/add",
- *     "edit-form" = "/billing/billing_amount/{billing_amount}/edit",
- *     "delete-form" = "/billing/billing_amount/{billing_amount}/delete",
- *     "collection" = "/billing/billing_amount",
+ *     "canonical" = "/billing/billing_account/{billing_account}",
+ *     "add-form" = "/billing/billing_account/add",
+ *     "edit-form" = "/billing/billing_account/{billing_account}/edit",
+ *     "delete-form" = "/billing/billing_account/{billing_account}/delete",
+ *     "collection" = "/billing/billing_account",
  *   },
- *   field_ui_base_route = "billing_amount.settings"
+ *   field_ui_base_route = "billing_account.settings"
  * )
  */
-class BillingAmount extends ContentEntityBase implements BillingAmountInterface {
+class BillingAccount extends ContentEntityBase implements BillingAccountInterface {
 
   use EntityChangedTrait;
 
@@ -150,7 +150,7 @@ class BillingAmount extends ContentEntityBase implements BillingAmountInterface 
 
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
-      ->setDescription(t('The user ID of author of the Billing amount entity.'))
+      ->setDescription(t('The user ID of author of the Billing account entity.'))
       ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
@@ -175,7 +175,7 @@ class BillingAmount extends ContentEntityBase implements BillingAmountInterface 
 
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
-      ->setDescription(t('The name of the Billing amount entity.'))
+      ->setDescription(t('The name of the Billing account entity.'))
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -195,7 +195,7 @@ class BillingAmount extends ContentEntityBase implements BillingAmountInterface 
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
-      ->setDescription(t('A boolean indicating whether the Billing amount is published.'))
+      ->setDescription(t('A boolean indicating whether the Billing account is published.'))
       ->setDefaultValue(TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
