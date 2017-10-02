@@ -3,3 +3,8 @@ entity.billing_account.add_form:
   title: 'Add billing account'
   appears_on:
     - entity.billing_account.collection
+entity.billing_transaction.add_form:
+  route_name: entity.billing_transaction.add_form
+  title: 'Add Billing transaction'
+  appears_on:
+    - entity.billing_transaction.collection

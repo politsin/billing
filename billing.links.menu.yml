@@ -12,3 +12,17 @@ billing_account.admin.structure.settings:
   description: 'Configure billing account entities'
   route_name: billing_account.settings
   parent: user.admin_index
+
+# Billing transaction menu items definition
+entity.billing_transaction.collection:
+  title: 'Billing transaction list'
+  route_name: entity.billing_transaction.collection
+  description: 'List Billing transaction entities'
+  parent: system.admin_structure
+  weight: 100
+
+billing_transaction.admin.structure.settings:
+  title: Billing transaction settings
+  description: 'Configure Billing transaction entities'
+  route_name: billing_transaction.settings
+  parent: system.admin_structure

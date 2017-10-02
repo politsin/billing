@@ -20,3 +20,25 @@ view published billing account entities:
 
 view unpublished billing account entities:
   title: 'View unpublished billing account entities'
+add billing transaction entities:
+  title: 'Create new Billing transaction entities'
+
+administer billing transaction entities:
+  title: 'Administer Billing transaction entities'
+  description: 'Allow to access the administration form to configure Billing transaction entities.'
+  restrict access: true
+
+delete billing transaction entities:
+  title: 'Delete Billing transaction entities'
+
+edit billing transaction entities:
+  title: 'Edit Billing transaction entities'
+
+access billing transaction overview:
+  title: 'Access the Billing transaction overview page'
+
+view published billing transaction entities:
+  title: 'View published Billing transaction entities'
+
+view unpublished billing transaction entities:
+  title: 'View unpublished Billing transaction entities'
