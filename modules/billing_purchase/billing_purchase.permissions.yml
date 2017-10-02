@@ -1,0 +1,21 @@
+administer billing purchase entities:
+  title: 'Administer Billing purchase entities'
+  description: 'Allow to access the administration form to configure Billing purchase entities.'
+  restrict access: true
+
+delete billing purchase entities:
+  title: 'Delete Billing purchase entities'
+
+edit billing purchase entities:
+  title: 'Edit Billing purchase entities'
+
+access billing purchase overview:
+  title: 'Access the Billing purchase overview page'
+
+view published billing purchase entities:
+  title: 'View published Billing purchase entities'
+
+view unpublished billing purchase entities:
+  title: 'View unpublished Billing purchase entities'
+add billing invoice entities:
+  title: 'Create new Billing invoice entities'

@@ -1,0 +1,10 @@
+entity.billing_invoice.add_form:
+  route_name: entity.billing_invoice.add_page
+  title: 'Add Billing invoice'
+  appears_on:
+    - entity.billing_invoice.collection
+entity.billing_invoice_type.add_form:
+  route_name: entity.billing_invoice_type.add_form
+  title: 'Add Billing invoice type'
+  appears_on:
+    - entity.billing_invoice_type.collection

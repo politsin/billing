@@ -1,5 +1,5 @@
-name: Billing
-description: 'user billing'
+name: Billing Invoice
+description: 'user billing invoices'
 type: module
 core: 8.x
 version: 1.0

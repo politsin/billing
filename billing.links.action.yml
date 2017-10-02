@@ -8,25 +8,3 @@ entity.billing_transaction.add_form:
   title: 'Add Billing transaction'
   appears_on:
     - entity.billing_transaction.collection
-entity.billing_purchase.add_form:
-  route_name: entity.billing_purchase.add_page
-  title: 'Add Billing purchase'
-  appears_on:
-    - entity.billing_purchase.collection
-entity.billing_purchase_type.add_form:
-  route_name: entity.billing_purchase_type.add_form
-  title: 'Add Billing purchase type'
-  appears_on:
-    - entity.billing_purchase_type.collection
-
-entity.billing_invoice.add_form:
-  route_name: entity.billing_invoice.add_page
-  title: 'Add Billing invoice'
-  appears_on:
-    - entity.billing_invoice.collection
-entity.billing_invoice_type.add_form:
-  route_name: entity.billing_invoice_type.add_form
-  title: 'Add Billing invoice type'
-  appears_on:
-    - entity.billing_invoice_type.collection
-

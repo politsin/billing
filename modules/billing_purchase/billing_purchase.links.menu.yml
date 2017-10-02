@@ -1,0 +1,16 @@
+# Billing purchase menu items definition
+entity.billing_purchase.collection:
+  title: 'Billing purchase list'
+  route_name: entity.billing_purchase.collection
+  description: 'List Billing purchase entities'
+  parent: entity.user.collection
+  weight: 100
+
+
+# Billing purchase type menu items definition
+entity.billing_purchase_type.collection:
+  title: 'Billing purchase type'
+  route_name: entity.billing_purchase_type.collection
+  description: 'List Billing purchase type (bundles)'
+  parent: user.admin_index
+  weight: 99

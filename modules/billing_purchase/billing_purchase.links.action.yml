@@ -1,0 +1,10 @@
+entity.billing_purchase.add_form:
+  route_name: entity.billing_purchase.add_page
+  title: 'Add Billing purchase'
+  appears_on:
+    - entity.billing_purchase.collection
+entity.billing_purchase_type.add_form:
+  route_name: entity.billing_purchase_type.add_form
+  title: 'Add Billing purchase type'
+  appears_on:
+    - entity.billing_purchase_type.collection

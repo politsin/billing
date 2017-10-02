@@ -26,37 +26,3 @@ billing_transaction.admin.structure.settings:
   description: 'Configure Billing transaction entities'
   route_name: billing_transaction.settings
   parent: user.admin_index
-
-# Billing purchase menu items definition
-entity.billing_purchase.collection:
-  title: 'Billing purchase list'
-  route_name: entity.billing_purchase.collection
-  description: 'List Billing purchase entities'
-  parent: entity.user.collection
-  weight: 100
-
-
-# Billing purchase type menu items definition
-entity.billing_purchase_type.collection:
-  title: 'Billing purchase type'
-  route_name: entity.billing_purchase_type.collection
-  description: 'List Billing purchase type (bundles)'
-  parent: user.admin_index
-  weight: 99
-
-# Billing invoice menu items definition
-entity.billing_invoice.collection:
-  title: 'Billing invoice list'
-  route_name: entity.billing_invoice.collection
-  description: 'List Billing invoice entities'
-  parent: entity.user.collection
-  weight: 100
-
-
-# Billing invoice type menu items definition
-entity.billing_invoice_type.collection:
-  title: 'Billing invoice type'
-  route_name: entity.billing_invoice_type.collection
-  description: 'List Billing invoice type (bundles)'
-  parent: user.admin_index
-  weight: 99

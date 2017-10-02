@@ -1,0 +1,17 @@
+# Billing invoice routing definition
+
+entity.billing_invoice.canonical:
+  route_name: entity.billing_invoice.canonical
+  base_route: entity.billing_invoice.canonical
+  title: 'View'
+
+entity.billing_invoice.edit_form:
+  route_name: entity.billing_invoice.edit_form
+  base_route: entity.billing_invoice.canonical
+  title: 'Edit'
+
+entity.billing_invoice.delete_form:
+  route_name:  entity.billing_invoice.delete_form
+  base_route:  entity.billing_invoice.canonical
+  title: Delete
+  weight: 10
