@@ -41,3 +41,39 @@ entity.billing_transaction.delete_form:
   title: Delete
   weight: 10
 
+# Billing purchase routing definition
+
+entity.billing_purchase.canonical:
+  route_name: entity.billing_purchase.canonical
+  base_route: entity.billing_purchase.canonical
+  title: 'View'
+
+entity.billing_purchase.edit_form:
+  route_name: entity.billing_purchase.edit_form
+  base_route: entity.billing_purchase.canonical
+  title: 'Edit'
+
+entity.billing_purchase.delete_form:
+  route_name:  entity.billing_purchase.delete_form
+  base_route:  entity.billing_purchase.canonical
+  title: Delete
+  weight: 10
+
+# Billing invoice routing definition
+
+entity.billing_invoice.canonical:
+  route_name: entity.billing_invoice.canonical
+  base_route: entity.billing_invoice.canonical
+  title: 'View'
+
+entity.billing_invoice.edit_form:
+  route_name: entity.billing_invoice.edit_form
+  base_route: entity.billing_invoice.canonical
+  title: 'Edit'
+
+entity.billing_invoice.delete_form:
+  route_name:  entity.billing_invoice.delete_form
+  base_route:  entity.billing_invoice.canonical
+  title: Delete
+  weight: 10
+

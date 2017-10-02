@@ -1,0 +1,12 @@
+billing.billing_invoice_type.*:
+  type: config_entity
+  label: 'Billing invoice type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
