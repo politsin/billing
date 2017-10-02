@@ -193,6 +193,43 @@ class BillingAccount extends ContentEntityBase implements BillingAccountInterfac
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Type'))
+      ->setDescription(t('Account entity_type etc: user, system, node, order.'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('user')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Entity ID'))
+      ->setDescription(t('Entity id.'))
+      ->setSettings([
+        'min' => 0,
+      ])
+      ->setDefaultValue(0);
+
+    $fields['amount'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Amount'))
+      ->setDescription(t('Current credit.'))
+      ->setSettings([
+        'precision' => 19,
+        'scale' => 6,
+      ])
+      ->setDefaultValue(0);
+
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Billing account is published.'))

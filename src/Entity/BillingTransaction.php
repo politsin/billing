@@ -173,6 +173,14 @@ class BillingTransaction extends ContentEntityBase implements BillingTransaction
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    // The product backreference, populated by Product::postSave().
+    $fields['account_id'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Account'))
+      ->setDescription(t('The account.'))
+      ->setSetting('target_type', 'billing_account')
+      ->setReadOnly(TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Billing transaction entity.'))
