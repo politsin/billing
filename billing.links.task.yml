@@ -1,3 +1,9 @@
+# User Page
+billing.user_billing.page:
+  route_name: billing.page
+  base_route: entity.user.canonical
+  title: Billing
+
 # billing account routing definition
 billing_account.settings_tab:
   route_name: billing_account.settings

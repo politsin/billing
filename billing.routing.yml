@@ -1,0 +1,11 @@
+billing.page:
+  path: '/user/{user}/billing'
+  defaults:
+    _controller: '\Drupal\billing\Controller\PageUserBilling::page'
+    _title: 'Billing'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:user
