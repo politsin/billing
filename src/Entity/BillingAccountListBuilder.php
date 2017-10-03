@@ -13,13 +13,60 @@ use Drupal\Core\Link;
  */
 class BillingAccountListBuilder extends EntityListBuilder {
 
+  /**
+   * {@inheritdoc}
+   */
+  public function render() {
+    $build['table'] = [
+      '#type' => 'table',
+      '#header' => $this->buildHeader(),
+      '#title' => $this->getTitle(),
+      '#rows' => [],
+      '#empty' => $this->t('There is no @label yet.', ['@label' => $this->entityType->getLabel()]),
+      '#cache' => [
+        'contexts' => $this->entityType->getListCacheContexts(),
+        'tags' => $this->entityType->getListCacheTags(),
+      ],
+    ];
+    $sum = 0;
+    foreach ($this->load() as $entity) {
+      $sum = $sum + $entity->amount->value;
+      if ($row = $this->buildRow($entity)) {
+        $build['table']['#rows'][$entity->id()] = $row;
+      }
+    }
+    $build['table']['#rows']['itogo'] = [
+      'id' => "",
+      'entity_type' => "",
+      'entity_id' => "",
+      'name' => $this->t('Itogo'),
+      'amount' => [
+        'class' => 'text-align-right',
+        'data' => $sum,
+      ],
+    ];
+
+    // Only add the pager if a limit is specified.
+    if ($this->limit) {
+      $build['pager'] = [
+        '#type' => 'pager',
+      ];
+    }
+    return $build;
+  }
 
   /**
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('Billing account ID');
+    $header['id'] = $this->t('ID');
     $header['name'] = $this->t('Name');
+    $header['entity_type'] = $this->t('Type');
+    $header['entity_id'] = $this->t('E Id');
+    $header['amount'] = [
+      'class' => 'text-align-right',
+      'data' => $this->t('Amount'),
+    ];
     return $header + parent::buildHeader();
   }
 
@@ -31,9 +78,15 @@ class BillingAccountListBuilder extends EntityListBuilder {
     $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),
-      'entity.billing_account.edit_form',
+      'entity.billing_account.canonical',
       ['billing_account' => $entity->id()]
     );
+    $row['entity_type'] = $entity->entity_type->value;
+    $row['entity_id'] = $entity->entity_id->value;
+    $row['amount'] = [
+      'class' => 'text-align-right',
+      'data' => $entity->amount->value,
+    ];
     return $row + parent::buildRow($entity);
   }
 
