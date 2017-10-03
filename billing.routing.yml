@@ -9,3 +9,15 @@ billing.page:
     parameters:
       user:
         type: entity:user
+
+billing.add_correction:
+  path: '/user/{user}/billing/add-correction'
+  defaults:
+    _form: '\Drupal\billing\Form\AddCorrection'
+    _title: 'Add Billing Correction'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      user:
+        type: entity:user

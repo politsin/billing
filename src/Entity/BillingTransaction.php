@@ -200,7 +200,39 @@ class BillingTransaction extends ContentEntityBase implements BillingTransaction
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
-
+    $fields['entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Type'))
+      ->setDescription(t('Transaction entity_type etc: invoice, purchase, correction.'))
+      ->setSettings([
+        'max_length' => 50,
+        'text_processing' => 0,
+      ])
+      ->setDefaultValue('correction')
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('view', TRUE);
+    $fields['entity_id'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Entity ID'))
+      ->setDescription(t('Entity id.'))
+      ->setSettings([
+        'min' => 0,
+      ])
+      ->setDefaultValue(0);
+    $fields['debit'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Debit'))
+      ->setSettings([
+        'precision' => 19,
+        'scale' => 6,
+      ]);
+    $fields['credit'] = BaseFieldDefinition::create('decimal')
+      ->setLabel(t('Credit'))
+      ->setSettings([
+        'precision' => 19,
+        'scale' => 6,
+      ]);
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Billing transaction is published.'))

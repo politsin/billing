@@ -65,6 +65,18 @@ class BillingAccount extends ContentEntityBase implements BillingAccountInterfac
     $values += [
       'user_id' => \Drupal::currentUser()->id(),
     ];
+    if (isset($values['entity_type']) && $values['entity_type'] == 'user') {
+      $values += [
+        'user_id' => $values['entity_id'],
+      ];
+    }
+  }
+
+  /**
+   * Amount.
+   */
+  public function getAmount() {
+    return (int) $this->get('amount')->value;
   }
 
   /**

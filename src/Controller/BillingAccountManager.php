@@ -16,13 +16,72 @@ class BillingAccountManager extends ControllerBase {
   /**
    * Get Account by Name.
    */
-  public static function getAccount(string $type, int $id = 0) {
-    $account = self::query($type, $id = 0);
+  public static function getDefaultAccount() {
+    $type = 'system';
+    $id = 0;
+    $account = self::query($type, $id);
     if (!$account) {
-      $account = self::create($name, $id = 0);
+      $account = self::createAccount($type, $id);
     }
-
     return $account;
+  }
+
+  /**
+   * Get Account by Name.
+   */
+  public static function getAccount(string $type, int $id = 0) {
+    $account = self::query($type, $id);
+    if (!$account) {
+      $account = self::createAccount($type, $id);
+    }
+    return $account;
+  }
+
+  /**
+   * Get Create.
+   */
+  public static function createAccount(string $type, int $id = 0) {
+    $storage = \Drupal::entityManager()->getStorage('billing_account');
+    $account = $storage->create([
+      'name' => "$type - $id",
+      'entity_type' => $type,
+      'entity_id' => $id,
+    ]);
+    $account->save();
+    return $account;
+  }
+
+  /**
+   * Get Create.
+   */
+  public static function reCalc($account) {
+    $transactions = self::reCalcQuery($account->id());
+    $amount = 0;
+    if ($transactions) {
+      foreach ($transactions as $key => $value) {
+        $amount = $amount + (float) $value->debit - (float) $value->credit;
+      }
+    }
+    $account->amount->setValue($amount);
+    $account->save();
+    return $amount;
+  }
+
+  /**
+   * Get Create.
+   */
+  public static function reCalcQuery($account_id) {
+    $fields = [
+      'entity_id',
+      'debit',
+      'credit',
+    ];
+    $query = \Drupal::database()->select('billing_transaction', 'transactions');
+    $query->fields('transactions', $fields);
+    $query->condition('status', 1);
+    $query->condition('account_id', $account_id);
+    $result = $query->execute();
+    return $result;
   }
 
   /**
