@@ -22,7 +22,6 @@ class PageUserBilling extends ControllerBase {
     $billing_account = BillingAccountManager::getUserAccount($uid);
     $amount = (float) $billing_account->get('amount')->value;
     $amount_human = number_format($amount, 3, '.', ' ');
-    $result = BillingAccountManager::reCalc($billing_account);
     return [
       'info' => ['#markup' => "Баланс $name: <b>$amount_human</b> фантиков.<br>"],
       'add' => ['#markup' => "<a href='/user/$uid/billing/add-correction'>Добавить фантиков</a>."],
