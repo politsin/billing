@@ -85,7 +85,7 @@ class BillingTransactionManager extends ControllerBase {
   }
 
   /**
-   * Create.
+   * Hash protection.
    */
   public static function getHash(array $d, array $c) {
     $hash = FALSE;
@@ -104,14 +104,14 @@ class BillingTransactionManager extends ControllerBase {
     $history = "";
     if (!empty($ids)) {
       foreach ($ids as $id) {
-        $entity = $storage->load($id);
-        $time = $entity->created->value;
-        $d = $entity->debit->value;
-        $c = $entity->credit->value;
-        $aid = $entity->account_id->entity->id();
-        $etype = $entity->entity_type->value;
-        $eid = $entity->entity_id->value;
-        $h = $entity->hash->value;
+        $tranaction = $storage->load($id);
+        $time = $tranaction->created->value;
+        $d = $tranaction->debit->value;
+        $c = $tranaction->credit->value;
+        $aid = $tranaction->account_id->entity->id();
+        $etype = $tranaction->entity_type->value;
+        $eid = $tranaction->entity_id->value;
+        $h = $tranaction->hash->value;
         $history .= "[{$id}]:{$time}:{$d}:{$c}:{$aid}:{$etype}:{$eid}:{$h}\n";
       }
     }
