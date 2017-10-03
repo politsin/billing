@@ -64,6 +64,7 @@ class BillingTransactionManager extends ControllerBase {
         'entity_type' => $entity_type,
         'entity_id' => $entity_id,
       ];
+
       $transaction_credit = [
         'name' => $comment,
         'account_id' => $credit->id(),
@@ -71,6 +72,9 @@ class BillingTransactionManager extends ControllerBase {
         'entity_type' => $entity_type,
         'entity_id' => $entity_id,
       ];
+      $hash = '';
+      $transaction_debit['hash'] = $hash;
+      $transaction_credit['hash'] = $hash;
       self::createTransaction($transaction_debit);
       self::createTransaction($transaction_credit);
       BillingAccountManager::reCalc($debit);
