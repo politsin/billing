@@ -76,11 +76,6 @@ class BillingTransactionManager extends ControllerBase {
       BillingAccountManager::reCalc($debit);
       BillingAccountManager::reCalc($credit);
     }
-
-
-
-    dsm([$sum, $transaction_debit, $transaction_credit]);
-
     return $comment;
   }
 

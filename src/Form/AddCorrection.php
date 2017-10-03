@@ -59,13 +59,15 @@ class AddCorrection extends FormBase {
     $form_state->setCached(FALSE);
     $form_state->uid = $extra;
     if (is_numeric($form_state->uid)) {
+      $step = '0.01';
       $form["#suffix"] = "<div class='billing-result' id='billing'></div>";
       $form["sum"] = [
         '#type' => 'number',
         '#title' => 'Сумма фантиков',
-        '#min' => -999999.999999,
-        '#max' => 999999.999999,
-        '#step' => 0.000001,
+        '#description' => "step: $step",
+        '#min' => -999999,
+        '#max' => 999999,
+        '#step' => $step,
       ];
       $form["billing-submit"] = [
         '#type' => 'submit',

@@ -240,6 +240,12 @@ class BillingAccount extends ContentEntityBase implements BillingAccountInterfac
         'precision' => 19,
         'scale' => 6,
       ])
+      ->setDisplayOptions('view', [
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
       ->setDefaultValue(0);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
