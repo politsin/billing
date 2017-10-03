@@ -233,6 +233,12 @@ class BillingTransaction extends ContentEntityBase implements BillingTransaction
         'precision' => 19,
         'scale' => 6,
       ]);
+    $fields['hash'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Hash'))
+      ->setDescription(t('Last 10 transacion protection.'))
+      ->setSettings([
+        'max_length' => 255,
+      ]);
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Billing transaction is published.'))
