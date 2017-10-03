@@ -37,9 +37,10 @@ class BillingAccountListBuilder extends EntityListBuilder {
     }
     $build['table']['#rows']['itogo'] = [
       'id' => "",
+      'name' => $this->t('Itogo'),
       'entity_type' => "",
       'entity_id' => "",
-      'name' => $this->t('Itogo'),
+      'changed' => "",
       'amount' => [
         'class' => 'text-align-right',
         'data' => $sum,
@@ -63,6 +64,7 @@ class BillingAccountListBuilder extends EntityListBuilder {
     $header['name'] = $this->t('Name');
     $header['entity_type'] = $this->t('Type');
     $header['entity_id'] = $this->t('E Id');
+    $header['changed'] = $this->t('Update');
     $header['amount'] = [
       'class' => 'text-align-right',
       'data' => $this->t('Amount'),
@@ -83,6 +85,7 @@ class BillingAccountListBuilder extends EntityListBuilder {
     );
     $row['entity_type'] = $entity->entity_type->value;
     $row['entity_id'] = $entity->entity_id->value;
+    $row['changed'] = format_date($entity->changed->value, 'middle');
     $row['amount'] = [
       'class' => 'text-align-right',
       'data' => $entity->amount->value,
